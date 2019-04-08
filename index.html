@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <script src="generator.js"></script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ansagengenerator</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Ansagengenerator</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>Zugeinfahrt</h2>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Gleis</label>
+                                <div class="col-sm-9">
+                                    <input type="number" min="1" max="999" id="einfahrtGleis" class="form-control"/>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <select class="form-control" id="einfahrtZuggattung"></select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="number" min="1" max="999" id="einfahrtZugnummer" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Ziel</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="einfahrtZiel"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Über</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="einfahrtVia">
+                                        <option value="0">-</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-3">Abfahrt (soll)</label>
+                                    <div class="col"><input type="number" min="0" max="23" id="einfahrtAbfahrtStunde"
+                                                            class="form-control"/></div>
+                                    <div class="col"><input type="number" min="0" max="59" id="einfahrtAbfahrtMinute"
+                                                            class="form-control"/></div>
+                                </div>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="einfahrtVerspaetung">
+                                <label class="form-check-label" for="einfahrtVerspaetung">Verspätet</label>
+                            </div>
+
+                            <button onclick="GeneratorEinfahrt.generate(['dt', 'en'])" class="btn btn-primary">Ansage
+                                abspielen
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
